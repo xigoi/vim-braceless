@@ -1,3 +1,3 @@
-syntax match bracelessOpeningBrace '\v\{$' conceal
-syntax match bracelessClosingBrace '\v\s*\};?$' conceal
-syntax match bracelessSemicolon '\v\;$' conceal
+let s:priority = 30
+
+call matchadd('Conceal', '\v<std\:\:', s:priority)

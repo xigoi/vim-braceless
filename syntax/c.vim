@@ -1,3 +1,5 @@
-syntax match bracelessOpeningBrace '\v\{$' conceal
-syntax match bracelessClosingBrace '\v\s*\};?$' conceal
-syntax match bracelessSemicolon '\v\;$' conceal
+let s:priority = 30
+
+call matchadd('Conceal', '\v\{\s*$', s:priority)
+call matchadd('Conceal', '\v\s*\}\s*;?\s*$|\}\s*\zeelse', s:priority)
+call matchadd('Conceal', '\v\;$', s:priority)
